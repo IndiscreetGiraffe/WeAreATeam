@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { generatecards } = require('./lib/generatecards');
+const { generatecards } = require('./lib/generateHTML');
 
 let employees = []
 console.log("Bob the builder, can we build it!")
@@ -132,7 +132,7 @@ async function startQuestions() {
                         return false;
                     }
                 }
-            }
+            },
             {
                 type: 'input',
                 name: 'internSchool',
@@ -164,7 +164,7 @@ async function startQuestions() {
     if (newEmployeeQuestions.newEmployee) {
         startQuestions()
     } else {
-        let returned = generatecards(employees)
+        let returned = generateHTML(employees)
         if (returned) {
             writeFile('./output/teamprofile.html', returned);
             console.log('Your file was created successfully!')

@@ -15,7 +15,7 @@ async function startQuestions() {
                 if (employeeNameInput) {
                     return true;
                 } else {
-                    console.log("Please enter the name of the employee!");
+                    console.log("Please enter the name of the employee!")
                     return false;
                 }
             }
@@ -28,7 +28,7 @@ async function startQuestions() {
                 if (employeeEmail) {
                     return true;
                 } else {
-                    console.log("Please enter your employee email!");
+                    console.log("Please enter your employee email!")
                     return false;
                 }
             }
@@ -44,5 +44,43 @@ async function startQuestions() {
 
     let employeeObject = employee
 
+    let manager
+    if (employee.employeeRole === 'Manager') {
+        manager = await inquirer.prompt([
+           {
+               type: 'input',
+               name: 'managerID',
+               message: "What is your manager ID?",
+               validate: managerID => {
+                   if (managerID) {
+                       return true;
+                   } else {
+                       console.log("Please enter the correct manager ID!")
+                       return false;
+                   }
+               }
+           },
+           {
+               type: 'input',
+               name: 'managerOffice',
+               message: "What is the number of the manager's office?",
+               validate: managerOffice => {
+                   if (managerOffice) {
+                       return true;
+                   } else {
+                       console.log("Please enter correct office number!")
+                       return false;
+                   }
+               }
+           }
+        ])
+        if (manager) {
+            employeeObject = { ...employeeObject, manager }
+            employees.push(employeeObject);
+        }
+    }
+
     
+
+
 }

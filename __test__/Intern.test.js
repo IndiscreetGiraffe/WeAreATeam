@@ -1,5 +1,4 @@
-const { expect } = require('@jest/globals');
-const { test } = require('picomatch');
+
 const Intern = require('../lib/Intern');
 
 test('creates Intern object', () => {

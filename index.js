@@ -116,6 +116,62 @@ async function startQuestions() {
         }
     }
 
-    
+    let intern
+    if (employee.employeeRole === 'Intern') {
+
+        intern = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'internID',
+                message: "Please enter a valid intern ID!",
+                validate: internID => {
+                    if (internID) {
+                        return true;
+                    } else {
+                        console.log("Please enter the intern ID!")
+                        return false;
+                    }
+                }
+            }
+            {
+                type: 'input',
+                name: 'internSchool',
+                message: "Please enter the intern's school.",
+                validate: internSchool => {
+                    if (internSchool) {
+                        return true;
+                    } else {
+                        console.log("Please enter the intern's school!")
+                        return false;
+                    }
+                }
+            }
+        ])
+        if (intern) {
+            employeeObject = { ...employeeObject, intern }
+            employees.push(employeeObject);
+        }
+
+    }
+
+    const newEmployeeQuestions = await inquirer.prompt ([
+        {
+            type: 'confirm',
+            name: 'newEmployee',
+            message: "Would you like to add a new employee?"
+        }
+    ])
+    if (newEmployeeQuestions.newEmployee) {
+        startQuestions()
+    } else {
+        let returned = generatecards(employees)
+        if (returned) {
+            writeFile('./output/teamprofile.html', returned);
+            console.log('Your file was created successfully!')
+        } else {
+            console.log("Error, nothing here to see.");
+        }
+    }
+
 
 }

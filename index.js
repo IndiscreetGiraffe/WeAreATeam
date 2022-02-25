@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { generatecards } = require('./lib/generateHTML');
+const { generateHTML } = require('./lib/generateHTML');
 
 let employees = []
 console.log("Bob the builder, can we build it!")

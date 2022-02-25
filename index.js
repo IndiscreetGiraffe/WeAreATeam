@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const { generateHTML } = require('./lib/generateHTML');
 
 let employees = []
-console.log("Bob the builder, can we build it!")
+console.log("Let's get ready to rummbbllee!")
 async function startQuestions() {
 
     const employee = await inquirer.prompt([

@@ -80,7 +80,42 @@ async function startQuestions() {
         }
     }
 
-    
+    let engineer
+    if (employee.employeeRole === 'Engineer') {
+        engineer = await inquirer.prompt ([
+            {
+                type: 'input',
+                name: 'engineerID',
+                message: "What be the Engineer's ID?",
+                validate: engineerID => {
+                    if (engineerID) {
+                        return true;
+                    } else {
+                        console.log("Please enter a valid Engineer ID!")
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'engineerGithub',
+                message: "What is the Engineer's Github?",
+                validate: engineerGithub => {
+                    if (engineerGithub) {
+                        return true;
+                    } else {
+                        console.log("Please enter the Github!")
+                        return false;
+                    }
+                }
+            }
+        ])
+        if (engineer) {
+            employeeObject = { ...employeeObject, engineer }
+            employees.push(employeeObject);
+        }
+    }
 
+    
 
 }

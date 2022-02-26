@@ -1,4 +1,4 @@
-# Team-Portfolio-Generator
+# We-Are-A-Team
 
   ![Badge for License](https://img.shields.io/badge/license-MIT-informational)
   

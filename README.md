@@ -18,7 +18,7 @@
   
   Video Tutorial 
   
-  https://drive.google.com/drive/u/0/folders/1WpAVwMEHfOo4NHv3-M0SAdrhrC1_RtTK
+  https://drive.google.com/file/d/1HweKUEcuu6y30bvlvbmCCntSBiuiNOc1/view?usp=sharing
  
 
   <img src = "./assets/Screenshot.png">

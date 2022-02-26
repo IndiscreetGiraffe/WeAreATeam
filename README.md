@@ -21,7 +21,7 @@
   https://drive.google.com/file/d/1HweKUEcuu6y30bvlvbmCCntSBiuiNOc1/view?usp=sharing
  
 
-  <img src = "./assets/Screenshot.png">
+  <img src = "./assets/screenshot.png">
 
   
   ## Languages Used 
